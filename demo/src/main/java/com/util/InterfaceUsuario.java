@@ -51,7 +51,6 @@ public class InterfaceUsuario {
         return valor;
     }
 
-    // 🔹 Novo: pedir double genérico (ex.: área construída, tamanho do terreno)
     public double pedirDouble(String mensagem) {
         double valor;
         do {
@@ -67,7 +66,6 @@ public class InterfaceUsuario {
         return valor;
     }
 
-    // 🔹 Novo: pedir int genérico (ex.: vagas da garagem, andar)
     public int pedirInt(String mensagem) {
         int valor;
         do {
@@ -83,7 +81,6 @@ public class InterfaceUsuario {
         return valor;
     }
 
-    // 🔹 Novo: pedir String (ex.: tipo de zona do terreno)
     public String pedirString(String mensagem) {
         String valor;
         do {

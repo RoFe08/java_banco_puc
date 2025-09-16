@@ -1,11 +1,13 @@
 package com.usecase;
 
 import com.modelo.Financiamento;
+import lombok.Getter;
 
+@Getter
 public class Casa extends Financiamento {
 
-    private double areaConstruida;
-    private double tamanhoTerreno;
+    private final double areaConstruida;
+    private final double tamanhoTerreno;
 
     public Casa(double valorImovel, int prazoFinanciamento, double taxaJurosAnual,
                 double areaConstruida, double tamanhoTerreno) {
@@ -18,14 +20,7 @@ public class Casa extends Financiamento {
     public double calcularPagamentoMensal() {
         double taxaMensal = (getTaxaJurosAnual() / 100) / 12;
         double parcelaBase = (getValorImovel() / (getPrazoFinanciamento() * 12)) * (1 + taxaMensal);
-        return parcelaBase + 80.0; // acréscimo fixo de R$80
+        return parcelaBase + 80.0;
     }
 
-    public double getAreaConstruida() {
-        return areaConstruida;
-    }
-
-    public double getTamanhoTerreno() {
-        return tamanhoTerreno;
-    }
 }

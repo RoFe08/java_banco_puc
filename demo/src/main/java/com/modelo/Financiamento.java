@@ -1,10 +1,13 @@
 package com.modelo;
 
+import lombok.Getter;
+
+@Getter
 public abstract class Financiamento {
 
-    private double valorImovel;
-    private int prazoFinanciamento;
-    private double taxaJurosAnual;
+    private final double valorImovel;
+    private final int prazoFinanciamento;
+    private final double taxaJurosAnual;
 
     public Financiamento(double valorImovel, int prazoFinanciamento, double taxaJurosAnual) {
         this.valorImovel = valorImovel;
@@ -18,19 +21,4 @@ public abstract class Financiamento {
         return calcularPagamentoMensal() * (prazoFinanciamento * 12);
     }
 
-    public double calcularTotalPagamentos() {
-        return calcularPagamentoMensal() * prazoFinanciamento * 12;
-    }
-
-    public double getValorImovel() {
-        return valorImovel;
-    }
-
-    public int getPrazoFinanciamento() {
-        return prazoFinanciamento;
-    }
-
-    public double getTaxaJurosAnual() {
-        return taxaJurosAnual;
-    }
 }

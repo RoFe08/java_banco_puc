@@ -1,11 +1,13 @@
 package com.usecase;
 
 import com.modelo.Financiamento;
+import lombok.Getter;
 
+@Getter
 public class Apartamento extends Financiamento {
 
-    private int vagasGaragem;
-    private int numeroAndar;
+    private final int vagasGaragem;
+    private final int numeroAndar;
 
     public Apartamento(double valorImovel, int prazoFinanciamento, double taxaJurosAnual,
                        int vagasGaragem, int numeroAndar) {
@@ -23,11 +25,4 @@ public class Apartamento extends Financiamento {
                 (Math.pow(1 + taxaMensal, meses) - 1);
     }
 
-    public int getVagasGaragem() {
-        return vagasGaragem;
-    }
-
-    public int getNumeroAndar() {
-        return numeroAndar;
-    }
 }
